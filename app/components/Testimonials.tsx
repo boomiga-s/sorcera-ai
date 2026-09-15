@@ -1,12 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
-
-const Spark = () => (
-  <svg className="spark" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 0c1 8 4 11 12 12-8 1-11 4-12 12-1-8-4-11-12-12 8-1 11-4 12-12z" />
-  </svg>
-);
 
 const ChevronLeft = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -22,30 +17,34 @@ const ChevronRight = () => (
 
 const TESTIMONIALS = [
   {
-    quote: "We stopped losing Friday-night orders to a busy line.",
-    name: "Restaurant owner",
-    role: "Sorcera customer",
+    quote:
+      "Voice ordering makes it so much easier to keep up with calls during our busiest hours. We can focus on the restaurant while every order keeps moving.",
+    name: "The Pulao Company",
+    logo: "/The pulao Company Logo.png",
   },
   {
     quote:
-      "Every order lands in the POS exactly as the caller said it — nothing lost in translation.",
-    name: "General manager",
-    role: "Sorcera customer",
+      "We no longer have to worry about missing calls when the restaurant gets busy. Orders are handled quickly and our team can focus on serving guests.",
+    name: "House of Biryani and Kebabs",
+    logo: "/HBK Logo.png",
   },
   {
-    quote: "Our staff is back on the floor instead of running for the phone.",
-    name: "Owner & operator",
-    role: "Sorcera customer",
+    quote:
+      "Our phone orders are handled without interrupting the team. It has made the ordering experience faster and much more convenient for our customers.",
+    name: "Brisita House",
+    logo: "/Frame 1160450186.png",
   },
   {
-    quote: "Callers get a straight answer even at nine on a Friday night.",
-    name: "Shift lead",
-    role: "Sorcera customer",
+    quote:
+      "During peak hours, every phone call matters. Voice ordering helps us capture those orders while our staff stays focused on the customers in front of us.",
+    name: "Hyderabad House",
+    logo: "/Nawabi Hyderabad House Logo.png",
   },
   {
-    quote: "We haven't missed a catering order since we turned it on.",
-    name: "Kitchen manager",
-    role: "Sorcera customer",
+    quote:
+      "The biggest difference is that customers don't have to wait for someone to answer the phone. Orders keep coming in even when we're busy.",
+    name: "The Monks",
+    logo: "/The Monks Logo.png",
   },
 ];
 
@@ -76,12 +75,12 @@ export default function Testimonials() {
         aria-hidden={position !== "center"}
       >
         <div className="tc-head">
-          <span className="tc-avatar" aria-hidden="true">
-            <Spark />
+          <span className="tc-avatar">
+            <Image src={t.logo} alt={t.name} width={36} height={36} />
           </span>
           <div>
             <cite>{t.name}</cite>
-            <span>{t.role}</span>
+            <span>Sorcera customer</span>
           </div>
         </div>
         <p>{t.quote}</p>
@@ -123,7 +122,7 @@ export default function Testimonials() {
       <div className="tc-dots">
         {TESTIMONIALS.map((t, i) => (
           <button
-            key={t.quote}
+            key={t.name}
             type="button"
             className={i === index ? "active" : ""}
             aria-label={`Show testimonial ${i + 1}`}
