@@ -37,6 +37,16 @@ const TESTIMONIALS = [
     name: "Owner & operator",
     role: "Sorcera customer",
   },
+  {
+    quote: "Callers get a straight answer even at nine on a Friday night.",
+    name: "Shift lead",
+    role: "Sorcera customer",
+  },
+  {
+    quote: "We haven't missed a catering order since we turned it on.",
+    name: "Kitchen manager",
+    role: "Sorcera customer",
+  },
 ];
 
 export default function Testimonials() {

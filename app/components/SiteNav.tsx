@@ -1,16 +1,10 @@
-import Link from "next/link";
-
 const Spark = () => (
   <svg className="spark" viewBox="0 0 24 24" aria-hidden="true">
     <path d="M12 0c1 8 4 11 12 12-8 1-11 4-12 12-1-8-4-11-12-12 8-1 11-4 12-12z" />
   </svg>
 );
 
-export default function SiteNav({
-  contactHref = "/contact",
-}: {
-  contactHref?: string;
-}) {
+export default function SiteNav() {
   return (
     <nav className="nav" aria-label="Main">
       <input
@@ -20,18 +14,18 @@ export default function SiteNav({
         aria-hidden="true"
       />
       <div className="wrap">
-        <Link className="wordmark" href="/#top" aria-label="Sorcera home">
+        <a className="wordmark" href="#top" aria-label="Sorcera home">
           Sorcera
           <Spark />
-        </Link>
+        </a>
         <div className="nav-links">
-          <Link href="/#how">How it works</Link>
-          <Link href="/#customers">Customers</Link>
-          <Link href="/#menus">Features</Link>
-          <Link href="/#faq">FAQ</Link>
-          <Link className="btn primary small" href={contactHref}>
+          <a href="#how">How it works</a>
+          <a href="#customers">Customers</a>
+          <a href="#menus">Features</a>
+          <a href="#faq">FAQ</a>
+          <a className="btn primary small" href="#contact-form">
             Contact us
-          </Link>
+          </a>
         </div>
         <label
           htmlFor="nav-toggle"
@@ -56,23 +50,23 @@ export default function SiteNav({
           </span>
         </div>
         <div className="nav-mobile-links">
-          <Link href="/#how">
+          <a href="#how">
             <span>How it works</span>
-          </Link>
-          <Link href="/#customers">
+          </a>
+          <a href="#customers">
             <span>Customers</span>
-          </Link>
-          <Link href="/#menus">
+          </a>
+          <a href="#menus">
             <span>Features</span>
-          </Link>
-          <Link href="/#faq">
+          </a>
+          <a href="#faq">
             <span>FAQ</span>
-          </Link>
+          </a>
         </div>
         <div className="nav-mobile-foot">
-          <Link className="btn primary" href={contactHref}>
+          <a className="btn primary" href="#contact-form">
             Contact us
-          </Link>
+          </a>
           <p>Live in a day · No new hardware · Month to month</p>
         </div>
       </div>

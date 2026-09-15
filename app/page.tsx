@@ -2,7 +2,9 @@ import Image from "next/image";
 import CallDemo from "./components/CallDemo";
 import { StepNumeral } from "./components/StepNumeral";
 import NavScrollBg from "./components/NavScrollBg";
+import SiteNav from "./components/SiteNav";
 import Testimonials from "./components/Testimonials";
+import ContactForm from "./components/ContactForm";
 
 const CUSTOMER_LOGOS = [
   { src: "/The pulao Company Logo.png", alt: "The Pulao Company" },
@@ -22,71 +24,7 @@ export default function Home() {
   return (
     <>
       <NavScrollBg />
-      <nav className="nav" aria-label="Main">
-        <input
-          type="checkbox"
-          id="nav-toggle"
-          className="nav-toggle-input"
-          aria-hidden="true"
-        />
-        <div className="wrap">
-          <a className="wordmark" href="#top" aria-label="Sorcera home">
-            Sorcera
-            <Spark />
-          </a>
-          <div className="nav-links">
-            <a href="#how">How it works</a>
-            <a href="#customers">Customers</a>
-            <a href="#menus">Features</a>
-            <a href="#faq">FAQ</a>
-            <a className="btn primary small" href="#book">
-              Contact us
-            </a>
-          </div>
-          <label
-            htmlFor="nav-toggle"
-            className="nav-toggle"
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-        <label
-          htmlFor="nav-toggle"
-          className="nav-backdrop"
-          aria-hidden="true"
-        ></label>
-        <div className="nav-mobile-panel" id="nav-mobile-panel">
-          <div className="nav-mobile-head">
-            <span className="wordmark">
-              Sorcera
-              <Spark />
-            </span>
-          </div>
-          <div className="nav-mobile-links">
-            <a href="#how">
-              <span>How it works</span>
-            </a>
-            <a href="#customers">
-              <span>Customers</span>
-            </a>
-            <a href="#menus">
-              <span>Features</span>
-            </a>
-            <a href="#faq">
-              <span>FAQ</span>
-            </a>
-          </div>
-          <div className="nav-mobile-foot">
-            <a className="btn primary" href="#book">
-              Contact us
-            </a>
-            <p>Live in a day · No new hardware · Month to month</p>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       <header className="hero dark" id="top">
         <div className="wrap">
@@ -463,12 +401,25 @@ export default function Home() {
             an order. Yours can by tomorrow night.
           </p>
           <div className="cta-row">
-            {/* Replace href with your scheduling link (Calendly, Cal.com, etc.) */}
-            <a className="btn primary" href="#book">
+            <a className="btn primary" href="#contact-form">
               Contact us
             </a>
             <small>First month money-back. No setup fee.</small>
           </div>
+        </div>
+      </section>
+
+      <section className="section light" id="contact-form">
+        <div className="wrap">
+          <div className="head contact-head">
+            <span className="eyebrow">Contact us</span>
+            <h2>Tell us about your restaurant.</h2>
+            <p className="lede">
+              We&apos;ll reach out to set up Sorcera on your line, usually
+              within a day.
+            </p>
+          </div>
+          <ContactForm />
         </div>
       </section>
 
@@ -506,7 +457,7 @@ export default function Home() {
               <strong>Talk to us</strong>
               <ul>
                 <li>
-                  <a href="#book">Contact us</a>
+                  <a href="#contact-form">Contact us</a>
                 </li>
                 <li>
                   <a href="#top">Contact</a>
@@ -527,3 +478,4 @@ export default function Home() {
     </>
   );
 }
+

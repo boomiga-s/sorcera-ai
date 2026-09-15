@@ -17,7 +17,7 @@ export default function CallDemo() {
           Toast, Square, Clover, or Brisque as if your own staff typed it.
         </p>
         <div className="hero-ctas">
-          <a className="btn primary" href="#book">
+          <a className="btn primary" href="#contact-form">
             Contact us
           </a>
         </div>
