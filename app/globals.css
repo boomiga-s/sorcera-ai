@@ -11,6 +11,7 @@
   --line:rgba(27,21,48,.14);
   --line-dark:rgba(251,247,238,.16);
   --ok:#3FBF7F;
+  --error:#B3261E;
   --wrap:1120px;
   --display:"Gilda Display",Georgia,serif;
   --heading:"Gilda Display",Georgia,serif;
@@ -313,6 +314,9 @@ footer.site{background:var(--ink);color:var(--paper);padding:56px 0 40px;border-
 .contact-form input,.contact-form textarea{font:inherit;font-size:1rem;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--text)}
 .contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--saffron);outline-offset:1px}
 .contact-form textarea{resize:vertical}
+.contact-form input[aria-invalid="true"],.contact-form textarea[aria-invalid="true"]{border-color:var(--error)}
+.contact-form .field-error{font-size:.82rem;color:var(--error)}
+.contact-form .form-error{padding:12px 14px;border-radius:10px;background:rgba(192,57,43,.08);color:var(--error);font-size:.9rem}
 .contact-form button{align-self:flex-start;margin-top:4px}
 .contact-form button:disabled{opacity:.7;cursor:default}
 .contact-success{max-width:36em;margin:0 auto;text-align:center;padding:32px 0}
